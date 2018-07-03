@@ -1,0 +1,20 @@
+{
+  "name": "crime-rate-change",
+  "version": "0.0.1",
+  "homepage": "https://github.com/seattletimes/crime-rate-change",
+  "authors": [
+    "The Seattle Times"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js/lib",
+    "test",
+    "tests"
+  ]
+}
