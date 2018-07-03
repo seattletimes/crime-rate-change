@@ -1,0 +1,9 @@
+<h1><%= data.legendTitle %></h1>
+<ul class="scale">
+  <% data.buckets.forEach(function(item, i) { %>
+  <li>
+    <span class="block" style="background-color: <%= data.colors[i * 2] %>"></span>
+    <%= item.label %>
+  </li>
+  <% }); %>
+</ul>

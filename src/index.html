@@ -22,21 +22,28 @@
         <p>The crime rate has gone down in more than half of Seattle’s neighborhoods since the start of the decade. While Pioneer Square had the biggest decline, due to a sharp drop in the property crime rate, it also had the city’s largest increase in violent crime rate.</p>
       </section>
 
+      <div class="mode-controls">
+        <% [
+            { data: "change-total", label: "Overall" },
+            { data: "change-violent", label: "Violent crime" },
+            { data: "change-property", label: "Property crime" },
+          ].forEach(function(input, i) { %>
+        <input id="<%= input.data %>" type="radio" name="mode" value="<%= input.data %>" <%=! i ? "checked" : "" %>>
+        <label for="<%= input.data %>">
+          <%= input.label %>
+        </label>
+        <% }); %>
+      </div>
+
       <div class="aspect-ratio-outer">
         <div class="aspect-ratio-inner">
 
-          <leaflet-map zoom=10.75>
+          <leaflet-map zoom=10.75 lat=47.614 lng=-122.333>
             <map-options>{ "zoomSnap": 0.25 }</map-options>
             <tile-layer layer="cartoPositronBlank"></tile-layer>
-            <geo-json src="assets/crime-rate-change.geo.json">
-              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1 }</geo-style>
-              <geo-palette property="CENSUSAREA">
-                <color-mapping max=10000 color="purple"></color-mapping>
-                <color-mapping min=10001 max=50000 color="blue"></color-mapping>
-                <color-mapping min=50001 max=100000 color="green"></color-mapping>
-                <color-mapping min=100001 max=200000 color="yellow"></color-mapping>
-                <color-mapping min=200001 color="orange"></color-mapping>
-              </geo-palette>
+            <geo-json id="geojson">
+              <geo-data><%= JSON.stringify(json.crc) %></geo-data>
+              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1, "fillOpacity": 0.6 }</geo-style>
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
                 <ul>
@@ -52,19 +59,6 @@
 
         </div>
         <aside class="legend">
-          <h1>Map legend</h1>
-          <ul class="scale">
-            <li>
-              <span class="block" style="background-color: red"></span> Cherry</li>
-            <li>
-              <span class="block" style="background-color: orange"></span> Orange</li>
-            <li>
-              <span class="block" style="background-color: yellow"></span> Lemon</li>
-            <li>
-              <span class="block" style="background-color: green"></span> Lime</li>
-            <li>
-              <span class="block" style="background-color: blue"></span> Blueberry</li>
-          </ul>
         </aside>
       </div>
 
