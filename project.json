@@ -5,13 +5,14 @@
       "path": "olympian-strengthening"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2018/fyi-guy/crime-rate-down"
     }
   },
-  "title": "",
-  "description": "",
-  "url": "",
-  "slug": "",
-  "tags": []
+  "title": "Crime rate down in most Seattle neighborhoods",
+  "description": "The crime rate has declined in more than half of Seattle neighborhoods since the start of the decade. South Lake Union saw the biggest decline, while South Delridge saw the sharpest increase.",
+  "url": "https://projects.seattletimes.com/2018/fyi-guy/crime-rate-down/",
+  "slug": "crime-rate-down",
+  "tags": [],
+  "production": true
 }
