@@ -18,7 +18,7 @@ map.scrollWheelZoom.disable();
 // Bind popups
 geojsonLayer.eachLayer((layer) => {
   var props = layer.feature.properties;
-  var format = attr => `${(props[attr] >= 0 ? "+" : "")}${props[attr].toFixed(1)}`;
+  var format = attr => `${(props[attr] > 0 ? "+" : "")}${props[attr].toFixed(1)}`;
   layer.bindPopup(`<h1 class="bigheader">${props.name}</h1>
     <ul>
       <li><span>Total crime rate change:</span><span>${format('change-total')}%</span></li>
@@ -56,8 +56,8 @@ var mapOptions = {
       { min: 0, max: 20, label: '0% to 20%' },
       { min: 20.1, max: 1000, label: 'More than 20% increase' },
     ],
-    // http://colorbrewer2.org/?type=diverging&scheme=RdYlBu&n=8
-    colors: ['#d73027', '#f46d43', '#fdae61', '#fee090', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4'].reverse(),
+    // http://colorbrewer2.org/?type=diverging&scheme=RdYlBu&n=8 - lightened yellow and blue
+    colors: ['#d73027', '#f46d43', '#fdae61', '#feeab3', '#e0f3f8', '#c3e4ef', '#74add1', '#4575b4'].reverse(),
   },
   "change-property": {
     legendTitle: "Change in property crime rate, 2008-2010 to 2015-2017",
