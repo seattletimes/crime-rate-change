@@ -58,7 +58,11 @@ aside.legend {
   .credit {
     font-style: normal;
     text-transform: uppercase;
-    display: inline-block;
     float: right;
+
+    @media @tablet {
+      display: block;
+      float: none;
+    }
   }
 }
