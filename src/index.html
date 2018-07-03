@@ -25,8 +25,8 @@
       <div class="mode-controls">
         <% [
             { data: "change-total", label: "Overall" },
-            { data: "change-violent", label: "Violent crime" },
             { data: "change-property", label: "Property crime" },
+            { data: "change-violent", label: "Violent crime" },
           ].forEach(function(input, i) { %>
         <input id="<%= input.data %>" type="radio" name="mode" value="<%= input.data %>" <%=! i ? "checked" : "" %>>
         <label for="<%= input.data %>">
@@ -43,7 +43,7 @@
             <tile-layer layer="cartoPositronBlank"></tile-layer>
             <geo-json id="geojson">
               <geo-data><%= JSON.stringify(json.crc2) %></geo-data>
-              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1, "fillOpacity": 0.6 }</geo-style>
+              <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1, "fillOpacity": 0.6, "fillColor": "transparent" }</geo-style>
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
                 <ul>

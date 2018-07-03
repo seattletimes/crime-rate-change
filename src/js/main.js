@@ -22,34 +22,34 @@ var topLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_only_labels/
 
 var mapOptions = {
   "change-total": {
-    legendTitle: "Change in crime, 2008-2011 to 2015-2017",
+    legendTitle: "Change in crime rate, 2008-2011 to 2015-2017",
     buckets: [
-      { min: -1000, max: -10.1, label: 'More than 10% decrease' },
-      { min: -10, max: -0.1, label: '-0.1% to -10%' },
-      { min: 0, max: 10, label: '0% to 10%' },
-      { min: 10.1, max: 1000, label: 'More than 10% increase' },
+      { min: -1000, max: -20.1, label: 'More than 20% decrease' },
+      { min: -20, max: -0.1, label: '-0.1% to -20%' },
+      { min: 0, max: 20, label: '0% to 20%' },
+      { min: 20.1, max: 1000, label: 'More than 20% increase' },
     ],
-    // http://colorbrewer2.org/?type=diverging&scheme=PiYG&n=8
-    colors: ['#c51b7d', '#de77ae', '#f1b6da', '#fde0ef', '#e6f5d0', '#b8e186', '#7fbc41', '#4d9221'].reverse(),
+    // http://colorbrewer2.org/?type=diverging&scheme=RdBu&n=8
+      colors: ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'].reverse(),
   },
   "change-violent": {
-    legendTitle: "Change in violent crime, 2008-2011 to 2015-2017",
+    legendTitle: "Change in violent crime rate, 2008-2011 to 2015-2017",
     buckets: [
-      { min: -1000, max: -1.1, label: 'More than 1% decrease' },
-      { min: -1, max: -0.1, label: '-0.1% to -1%' },
-      { min: 0, max: 1, label: '0% to 1%' },
-      { min: 1.1, max: 1000, label: 'More than 1% increase' },
+      { min: -1000, max: -20.1, label: 'More than 20% decrease' },
+      { min: -20, max: -0.1, label: '-0.1% to -20%' },
+      { min: 0, max: 20, label: '0% to 20%' },
+      { min: 20.1, max: 1000, label: 'More than 20% increase' },
     ],
-    // http://colorbrewer2.org/?type=diverging&scheme=PuOr&n=8
-    colors: ['#b35806', '#e08214', '#fdb863', '#fee0b6', '#d8daeb', '#b2abd2', '#8073ac', '#542788'].reverse(),
+    // http://colorbrewer2.org/?type=diverging&scheme=RdYlBu&n=8
+    colors: ['#d73027', '#f46d43', '#fdae61', '#fee090', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4'].reverse(),
   },
   "change-property": {
-    legendTitle: "Change in property crime, 2008-2011 to 2015-2017",
+    legendTitle: "Change in property crime rate, 2008-2011 to 2015-2017",
     buckets: [
-      { min: -1000, max: -10.1, label: 'More than 10% decrease' },
-      { min: -10, max: -0.1, label: '-0.1% to -10%' },
-      { min: 0, max: 10, label: '0% to 10%' },
-      { min: 10.1, max: 1000, label: 'More than 10% increase' },
+      { min: -1000, max: -20.1, label: 'More than 20% decrease' },
+      { min: -20, max: -0.1, label: '-0.1% to -20%' },
+      { min: 0, max: 20, label: '0% to 20%' },
+      { min: 20.1, max: 1000, label: 'More than 20% increase' },
     ],
     // http://colorbrewer2.org/?type=diverging&scheme=BrBG&n=8
     colors: ['#8c510a', '#bf812d', '#dfc27d', '#f6e8c3', '#c7eae5', '#80cdc1', '#35978f', '#01665e'].reverse(),
