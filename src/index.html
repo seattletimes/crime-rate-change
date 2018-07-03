@@ -27,10 +27,7 @@
 
           <leaflet-map zoom=10>
             <tile-layer layer="cartoPositron"></tile-layer>
-            <geo-json>
-              <geo-data>
-                <%= t.include("states.geo.json") %>
-              </geo-data>
+            <geo-json src="assets/crime-rate-change.geo.json">
               <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1 }</geo-style>
               <geo-palette property="CENSUSAREA">
                 <color-mapping max=10000 color="purple"></color-mapping>
@@ -40,11 +37,9 @@
                 <color-mapping min=200001 color="orange"></color-mapping>
               </geo-palette>
               <geo-popup>
-                <h1 class="bigheader">{{NAME}}</h1>
+                <h1 class="bigheader">{{name}}</h1>
                 <ul>
-                  <li> Size: {{CENSUSAREA}}
-                  <li> State ID: {{STATE}}
-                  <li> Geo ID: {{GEO_ID}}
+                  <li> Rate change: {{change-total}}%
                 </ul>
               </geo-popup>
             </geo-json>
