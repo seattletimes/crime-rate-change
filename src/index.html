@@ -42,7 +42,7 @@
             <map-options>{ "zoomSnap": 0.25 }</map-options>
             <tile-layer layer="cartoPositronBlank"></tile-layer>
             <geo-json id="geojson">
-              <geo-data><%= JSON.stringify(json.crc) %></geo-data>
+              <geo-data><%= JSON.stringify(json.crc2) %></geo-data>
               <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1, "fillOpacity": 0.6 }</geo-style>
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
@@ -50,8 +50,9 @@
                   <li><span>Total crime rate change:</span><span>{{change-total}}%</span></li>
                   <li><span>Violent crime rate change:</span><span>{{change-violent}}%</span></li>
                   <li><span>Property crime rate change:</span><span>{{change-property}}%</span></li>
-                  <li><span>Crime rate, 2015-2017:</span><span>{{rate-recent}}</span></li>
-                  <li>(crimes per 1,000 people per year)</li>
+                  <li>&nbsp;</li>
+                  <li><span>Crime rate ranking, 2015-2017:</span><span>{{rate-rank}}</span></li>
+                  <li>(1 = relatively high, 57 = relatively low)</li>
                 </ul>
               </geo-popup>
             </geo-json>
