@@ -38,7 +38,7 @@ var topLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_only_labels/
 
 var mapOptions = {
   "change-total": {
-    legendTitle: "Change in crime rate, 2008-2011 to 2015-2017",
+    legendTitle: "Change in crime rate, 2008-2010 to 2015-2017",
     buckets: [
       { min: -1000, max: -20.1, label: 'More than 20% decrease' },
       { min: -20, max: -0.1, label: '-0.1% to -20%' },
@@ -49,7 +49,7 @@ var mapOptions = {
       colors: ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'].reverse(),
   },
   "change-violent": {
-    legendTitle: "Change in violent crime rate, 2008-2011 to 2015-2017",
+    legendTitle: "Change in violent crime rate, 2008-2010 to 2015-2017",
     buckets: [
       { min: -1000, max: -20.1, label: 'More than 20% decrease' },
       { min: -20, max: -0.1, label: '-0.1% to -20%' },
@@ -60,7 +60,7 @@ var mapOptions = {
     colors: ['#d73027', '#f46d43', '#fdae61', '#fee090', '#e0f3f8', '#abd9e9', '#74add1', '#4575b4'].reverse(),
   },
   "change-property": {
-    legendTitle: "Change in property crime rate, 2008-2011 to 2015-2017",
+    legendTitle: "Change in property crime rate, 2008-2010 to 2015-2017",
     buckets: [
       { min: -1000, max: -20.1, label: 'More than 20% decrease' },
       { min: -20, max: -0.1, label: '-0.1% to -20%' },
