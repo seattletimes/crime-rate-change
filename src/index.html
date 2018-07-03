@@ -19,7 +19,7 @@
     <div class="outmost">
       <section class="chatter">
         <h1>Crime rate down in most Seattle neighborhoods</h1>
-        <p>The crime rate has gone down in more than half of Seattle’s neighborhoods since the start of the decade. While Pioneer Square had the biggest decline, due to a sharp drop in the property crime rate, it also had the city’s largest increase in violent crime rate.</p>
+        <p>The crime rate has declined in more than half of Seattle neighborhoods since the start of the decade. South Delridge saw the sharpest increase, while South Lake Union had the biggest decline.</p>
       </section>
 
       <div class="mode-controls">
@@ -44,23 +44,11 @@
             <geo-json id="geojson">
               <geo-data><%= JSON.stringify(json.crc2) %></geo-data>
               <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1, "fillOpacity": 0.6, "fillColor": "transparent" }</geo-style>
-              <geo-popup>
-                <h1 class="bigheader">{{name}}</h1>
-                <ul>
-                  <li><span>Total crime rate change:</span><span>{{change-total}}%</span></li>
-                  <li><span>Violent crime rate change:</span><span>{{change-violent}}%</span></li>
-                  <li><span>Property crime rate change:</span><span>{{change-property}}%</span></li>
-                  <li>&nbsp;</li>
-                  <li><span>Crime rate ranking, 2015-2017:</span><span>{{rate-rank}}</span></li>
-                  <li>(1 = relatively high, 57 = relatively low)</li>
-                </ul>
-              </geo-popup>
             </geo-json>
           </leaflet-map>
 
         </div>
-        <aside class="legend">
-        </aside>
+        <aside class="legend"></aside>
       </div>
 
 

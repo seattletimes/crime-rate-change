@@ -10,9 +10,25 @@ var legendTemplate = dot.compile(require("./_legend.html"));
 var element = document.querySelector("leaflet-map");
 var L = element.leaflet;
 var map = element.map;
+var geojsonLayer = element.lookup.geojson;
 var legendElement = $.one('.legend');
 
 map.scrollWheelZoom.disable();
+
+// Bind popups
+geojsonLayer.eachLayer((layer) => {
+  var props = layer.feature.properties;
+  var format = attr => `${(props[attr] >= 0 ? "+" : "")}${props[attr].toFixed(1)}`;
+  layer.bindPopup(`<h1 class="bigheader">${props.name}</h1>
+    <ul>
+      <li><span>Total crime rate change:</span><span>${format('change-total')}%</span></li>
+      <li><span>Violent crime rate change:</span><span>${format('change-violent')}%</span></li>
+      <li><span>Property crime rate change:</span><span>${format('change-property')}%</span></li>
+      <li>&nbsp;</li>
+      <li><span>Crime rate ranking, 2015-2017:</span><span>${props['rate-rank']}</span></li>
+      <li>(1 = relatively high, 57 = relatively low)</li>
+    </ul>`);
+});
 
 // Add labels
 var topLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png", {
@@ -59,9 +75,6 @@ var mapOptions = {
 // Support switching styles
 var currentStyle = "";
 var toggleStyle = function toggleStyle(slug) {
-  var geojsonLayer = element.lookup.geojson;
-  if (!geojsonLayer) return; // Hasn't loaded geojson asynchronously yet
-
   if (slug === currentStyle) return; // No change
   currentStyle = slug;
   var mapOption = mapOptions[slug];
