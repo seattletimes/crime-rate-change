@@ -7,13 +7,9 @@ var element = document.querySelector("leaflet-map");
 var L = element.leaflet;
 var map = element.map;
 
-//ICH code for popup template if needed----------
-// var ich = require("icanhaz");
-// var templateFile = require("./_popup.html");
-// ich.addTemplate("popup", templateFile);
-
-// var onEachFeature = function(feature, layer) {
-//   layer.bindPopup(ich.popup(feature.properties))
-// };
-
- map.scrollWheelZoom.disable();
+map.scrollWheelZoom.disable();
+// Add labels
+var topLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png", {
+  opacity: 0.8,
+  pane: "markerPane",
+}).addTo(map);

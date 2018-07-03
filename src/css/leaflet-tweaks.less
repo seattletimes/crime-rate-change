@@ -5,6 +5,22 @@ div.leaflet-popup-content{
   width:auto;
   // max-width:240px;
   font-family: @df-sans;
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    width: 100%;
+    .display-flex();
+    .justify-content(space-between);
+  }
+
+  .float-right {
+    float: right;
+    text-align: right;
+  }
 }
 
 div.leaflet-popup-content-wrapper {

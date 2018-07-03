@@ -25,8 +25,9 @@
       <div class="aspect-ratio-outer">
         <div class="aspect-ratio-inner">
 
-          <leaflet-map zoom=10>
-            <tile-layer layer="cartoPositron"></tile-layer>
+          <leaflet-map zoom=10.75>
+            <map-options>{ "zoomSnap": 0.25 }</map-options>
+            <tile-layer layer="cartoPositronBlank"></tile-layer>
             <geo-json src="assets/crime-rate-change.geo.json">
               <geo-style>{ "weight": 1, "color": "#000", "opacity":0.1 }</geo-style>
               <geo-palette property="CENSUSAREA">
@@ -39,7 +40,11 @@
               <geo-popup>
                 <h1 class="bigheader">{{name}}</h1>
                 <ul>
-                  <li> Rate change: {{change-total}}%
+                  <li><span>Total crime rate change:</span><span>{{change-total}}%</span></li>
+                  <li><span>Violent crime rate change:</span><span>{{change-violent}}%</span></li>
+                  <li><span>Property crime rate change:</span><span>{{change-property}}%</span></li>
+                  <li><span>Crime rate, 2015-2017:</span><span>{{rate-recent}}</span></li>
+                  <li>(crimes per 1,000 people per year)</li>
                 </ul>
               </geo-popup>
             </geo-json>
