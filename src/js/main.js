@@ -25,8 +25,8 @@ geojsonLayer.eachLayer((layer) => {
       <li><span>Violent crime rate change:</span><span>${format('change-violent')}%</span></li>
       <li><span>Property crime rate change:</span><span>${format('change-property')}%</span></li>
       <li>&nbsp;</li>
-      <li><span>Crime rate ranking, 2015-2017:</span><span>${props['rate-rank']}</span></li>
-      <li>(1 = relatively high, 57 = relatively low)</li>
+      <li><span>Crime rate ranking, 2015-2017:&nbsp;</span><span>${props['rate-rank']} of 57</span></li>
+      <li>(Ranked from highest to lowest rate)</li>
     </ul>`);
 });
 
